@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#121212"
+    android:fillViewport="true"
+    app:layout_constraintTop_toBottomOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_encrypt"
+        android:background="#121212"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activities.decrypt.DecryptActivity">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/activity_stego_top_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/tvIVTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:paddingBottom="5dp"
+                android:text="@string/select_image_dialog"
+                android:textAlignment="center"
+                android:layout_marginBottom="20dp"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:textIsSelectable="false"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivStegoImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:baselineAlignBottom="false"
+                android:textAlignment="gravity"
+                app:srcCompat="@drawable/ic_upload"
+                tools:ignore="VectorDrawableCompat" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bDecrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:padding="20dp"
+                android:background="@drawable/edit_text_shape"
+                android:text="@string/b_secret_text_decrypt"
+                android:textColor="@color/colorPrimaryWhite" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bStegoShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="@string/b_stego_image_share"
+                android:textColor="@color/colorPrimaryWhite"
+                android:background="@drawable/edit_text_shape"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#121212"
+    android:fillViewport="true"
+    app:layout_constraintTop_toBottomOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/activity_encrypt"
+      android:background="#121212"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fitsSystemWindows="true"
+      tools:context=".activities.decrypt.DecryptResultActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/activity_stego_top_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginBottom="40dp"
+          android:fontFamily="serif"
+          android:paddingTop="3dp"
+          android:paddingBottom="5dp"
+          android:text="single level protection Layer encrypted...\n Here is your secrete message"
+          android:textAlignment="center"
+          android:textAllCaps="true"
+          android:textColor="#ffffff"
+          android:textSize="24sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/tvSecretMessage"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:fontFamily="serif"
+          android:paddingTop="2dp"
+          android:text=""
+          android:textColor="#bb86fc"
+          android:textSize="18sp" />
+
+      <ImageView
+          android:id="@+id/ivSecretImage"
+          android:layout_width="match_parent"
+          android:layout_height="300dp"
+          android:layout_marginBottom="30dp"
+          android:baselineAlignBottom="false"
+          android:contentDescription="@string/decrypt_result_title"
+          android:layout_gravity="center"
+          android:visibility="gone"
+          app:srcCompat="@drawable/ic_upload"
+          tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

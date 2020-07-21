@@ -1,0 +1,64 @@
+<resources>
+
+    <!--View Titles-->
+    <string name="app_name">SecreteStagano</string>
+    <string name="select_image_title">Select Cover Image</string>
+    <string name="stego_image_title">Result Image</string>
+    <string name="decrypt_result_title">Secret Message</string>
+    <string name="secret_message_title">Secret Message Type</string>
+    <string name="rb_secret_text">Text</string>
+    <string name="rb_secret_image">Image</string>
+    <string name="b_secret_text_encrypt">Encrypt</string>
+    <string name="b_secret_text_decrypt">Decrypt Single level protection</string>
+    <string name="b_stego_image_share">Share</string>
+    <string name="b_stego_image_save">Save In Mobile\'s Database</string>
+    <string name="et_secret_text">Message&#8230;</string>
+    <string name="take_image_dialog">Take Photo</string>
+    <string name="select_image_dialog">Select Image</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_image">Choose Image</string>
+
+    <!--Messages-->
+    <string name="encrypted_success">Message is successfully encrypted !</string>
+    <string name="encrypted_fail">Failure during message encryption</string>
+    <string name="decrypt_success">Message is successfully decrypted</string>
+    <string name="decrypt_fail">Failure during message decryption</string>
+    <string name="compress_error">Failure during image compression</string>
+    <string name="save_image_success">Stego Image was successfully saved !</string>
+    <string name="save_image_error">Failure during image saving</string>
+    <string name="cover_image_empty">Please, select cover image</string>
+    <string name="image_is_saved">Stego Image is already saved on device</string>
+    <string name="secret_image_empty">Please, select secret image</string>
+    <string name="secret_message_long">Secret message is too long</string>
+    <string name="stego_image_not_selected">Stego Image is not selected !</string>
+    <string name="non_stego_image_selected">Selected image is not a proper Stego Image</string>
+    <string name="secret_text_empty">Text field is empty !</string>
+
+    <!--welcome activity-->
+    <string name="encode_button">Encode</string>
+    <string name="decode_button">Decode</string>
+    <string name="welcome_to_stegnography">Welcome to Stegnography !</string>
+    <string name="text_encode_button">Text</string>
+    <string name="voice_encode_button">Voice</string>
+    <string name="type_of_data_for_encoding">Type of data for encoding :</string>
+    <string name="title_activity_decoding">DecodingActivity</string>
+    <string name="browse">Browse</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Happy Ecoding!</string>
+    <string name="slide_1_desc">Enter message or select an Image to hide and store it in cover image! You can either browse or capture the image</string>
+
+    <string name="slide_2_title">Happy Decoding!</string>
+    <string name="slide_2_desc">Select the image to be decoded!</string>
+    <string name="slide_2_note">Note:  Encoded Image has to be browsed from CryptoMessenger folder</string>
+
+    <string name="slide_3_title">Share Encoded Images Via</string>
+    <string name="slide_3_desc">Encoded images can be shared via Email, Bluetooth or SHAREit!</string>
+
+    <string name="slide_4_title">Warning</string>
+    <string name="slide_4_desc">Do not share images via WhatsApp or Facebook because these apps compresses images which leads to loss of encoded message</string>
+</resources>

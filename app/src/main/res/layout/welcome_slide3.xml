@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_backgroundimg">
+
+
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_bluetooth"
+        android:id="@+id/imageView3"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="@dimen/img_width_height"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ic_shareit"
+        android:id="@+id/imageView4"
+        android:layout_alignBottom="@+id/imageView5"
+        android:layout_toStartOf="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="@dimen/img_width_height"
+        app:srcCompat="@drawable/ic_gmail"
+        android:id="@+id/imageView5"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/slide_3_title"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginBottom="53dp"
+        android:layout_above="@+id/imageView3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slide_3_desc"
+        android:id="@+id/textView4"
+        android:layout_marginTop="53dp"
+        android:textColor="@android:color/white"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:textAlignment="center"
+        android:textSize="@dimen/slide_desc"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

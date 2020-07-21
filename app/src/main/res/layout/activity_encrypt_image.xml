@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#121212"
+    android:fillViewport="true"
+    app:layout_constraintTop_toBottomOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_encrypt"
+        android:background="#121212"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activities.encrypt.EncryptImageActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:text="@string/select_image_title"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="#ffffff"
+                android:layout_marginBottom="30dp"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/ivCoverImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:baselineAlignBottom="false"
+                android:contentDescription="@string/select_image_title"
+                android:textAlignment="gravity"
+                app:srcCompat="@drawable/ic_upload"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:text="SELECT IMAGE TO HIDE"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textIsSelectable="true"
+                android:layout_marginBottom="20dp"
+                android:textSize="24sp" />
+
+
+            <EditText
+                android:id="@+id/etSecretMessage"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_shape"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:gravity="start|top"
+                android:hint="Type your secrete message here..."
+                android:layout_marginBottom="40dp"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:overScrollMode="always"
+                android:visibility="gone"
+                android:padding="8dp"
+                android:scrollbars="vertical"
+                android:textColor="#070000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <ImageView
+                android:id="@+id/ivSecretImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_upload"
+                android:layout_marginBottom="40dp"
+                tools:ignore="VectorDrawableCompat" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bEncrypt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text_shape"
+                android:fontFamily="serif"
+                android:text="@string/b_secret_text_encrypt"
+                android:textColor="#ffffff"
+                android:padding="15dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,27 @@
+<resources>
+  <!-- Default screen margins, per the Android Design guidelines. -->
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+
+  <!--Text dimensions-->
+  <dimen name="small_text_dim">14sp</dimen>
+  <dimen name="medium_text_dim">18sp</dimen>
+  <dimen name="big_text_dim">30sp</dimen>
+
+  <!--Image dimensions-->
+  <dimen name="medium_image_square">150dp</dimen>
+  <dimen name="large_image_square">200dp</dimen>
+  <dimen name="stego_image_square">300dp</dimen>
+
+  <!--Activity dimensions-->
+  <dimen name="activity_stego_top_padding">10dp</dimen>
+
+  <dimen name="fab_margin">16dp</dimen>
+
+  <dimen name="dots_height">30dp</dimen>
+  <dimen name="dots_margin_bottom">20dp</dimen>
+  <dimen name="img_width_height">120dp</dimen>
+  <dimen name="slide_title">30dp</dimen>
+  <dimen name="slide_desc">16dp</dimen>
+  <dimen name="desc_padding">40dp</dimen>
+</resources>

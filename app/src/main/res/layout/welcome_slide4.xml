@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_backgroundimg">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/slide_4_title"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:layout_above="@+id/imageView6"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/imageView6"
+        android:layout_marginLeft="60dp"
+        app:srcCompat="@drawable/ic_sad"
+        android:layout_above="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/desc_padding"
+        android:paddingRight="@dimen/desc_padding"
+        android:text="@string/slide_4_desc"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/slide_desc"
+        android:id="@+id/textView6"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/ic_whatsapp"
+        android:id="@+id/imageWhatsapp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignEnd="@+id/imageView6"
+        android:layout_marginEnd="63dp"
+        android:layout_marginTop="46dp" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/ic_wrong"
+        android:id="@+id/imageWhatsappx"
+        android:layout_alignTop="@+id/imageWhatsapp"
+        android:layout_alignStart="@+id/imageWhatsapp" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/ic_facebook"
+        android:id="@+id/imageFb"
+        android:layout_alignTop="@+id/imageWhatsapp"
+        android:layout_alignStart="@+id/imageFbx" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/ic_wrong"
+        android:id="@+id/imageFbx"
+        android:layout_alignTop="@+id/imageFb"
+        android:layout_toEndOf="@+id/imageWhatsapp" />
+
+
+</RelativeLayout>
