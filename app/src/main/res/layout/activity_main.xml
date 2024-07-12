@@ -117,9 +117,7 @@
           android:background="#424242"
           android:clickable="true"
           app:cardCornerRadius="12dp"
-          app:cardElevation="6dp"
-          app:layout_columnWeight="1"
-          app:layout_rowWeight="1">
+          app:cardElevation="6dp">
 
         <LinearLayout
             android:id="@+id/encodeButton"
@@ -156,9 +154,7 @@
           android:background="#424242"
           android:clickable="true"
           app:cardCornerRadius="12dp"
-          app:cardElevation="6dp"
-          app:layout_columnWeight="1"
-          app:layout_rowWeight="1">
+          app:cardElevation="6dp">
 
         <LinearLayout
             android:id="@+id/encodeImageButton"
@@ -196,9 +192,7 @@
           android:background="#424242"
           android:clickable="true"
           app:cardCornerRadius="12dp"
-          app:cardElevation="6dp"
-          app:layout_columnWeight="1"
-          app:layout_rowWeight="1">
+          app:cardElevation="6dp">
 
         <LinearLayout
             android:id="@+id/decodeButton"

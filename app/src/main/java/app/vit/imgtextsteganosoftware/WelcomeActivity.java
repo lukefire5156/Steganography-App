@@ -15,21 +15,21 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class WelcomeActivity extends AppCompatActivity {
+import app.vit.imgtextsteganosoftware.databinding.ActivityMainBinding;
+import app.vit.imgtextsteganosoftware.databinding.ActivityWecomeBinding;
 
+public class WelcomeActivity extends AppCompatActivity {
+    private ActivityWecomeBinding binding;
     MyViewPagerAdapter myViewPagerAdapter;
-    private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, btnNext;
     private PrefManager prefManager;
     private String check;
-    ViewPager viewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,14 +65,8 @@ public class WelcomeActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
-
-        setContentView(R.layout.activity_wecome);
-
-        viewPager = findViewById(R.id.view_pager);
-        dotsLayout =  findViewById(R.id.layoutDots);
-        btnSkip =  findViewById(R.id.btn_skip);
-        btnNext = findViewById(R.id.btn_next);
-
+        binding = ActivityWecomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         // layouts of all welcome sliders
         // add few more layouts if you want
@@ -90,17 +84,17 @@ public class WelcomeActivity extends AppCompatActivity {
         changeStatusBarColor();
 
         myViewPagerAdapter = new MyViewPagerAdapter();
-        viewPager.setAdapter(myViewPagerAdapter);
-        viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+        binding.viewPager.setAdapter(myViewPagerAdapter);
+        binding.viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
-        btnSkip.setOnClickListener(new View.OnClickListener() {
+        binding.btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchHomeScreen();
             }
         });
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // checking for last page
@@ -108,7 +102,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 int current = getItem(+1);
                 if (current < layouts.length) {
                     // move to next screen
-                    viewPager.setCurrentItem(current);
+                    binding.viewPager.setCurrentItem(current);
                 } else {
                     launchHomeScreen();
                 }
@@ -122,13 +116,13 @@ public class WelcomeActivity extends AppCompatActivity {
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
         int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
 
-        dotsLayout.removeAllViews();
+        binding.layoutDots.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
             dots[i].setTextColor(colorsInactive[currentPage]);
-            dotsLayout.addView(dots[i]);
+            binding.layoutDots.addView(dots[i]);
         }
 
         if (dots.length > 0)
@@ -136,7 +130,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private int getItem(int i) {
-        return viewPager.getCurrentItem() + i;
+        return binding.viewPager.getCurrentItem() + i;
     }
 
     private void launchHomeScreen() {
@@ -156,12 +150,12 @@ public class WelcomeActivity extends AppCompatActivity {
             // changing the next button text 'NEXT' / 'GOT IT'
             if (position == layouts.length - 1) {
                 // last page. make button text to GOT IT
-                btnNext.setText(getString(R.string.start));
-                btnSkip.setVisibility(View.GONE);
+                binding.btnNext.setText(getString(R.string.start));
+                binding.btnSkip.setVisibility(View.GONE);
             } else {
                 // still pages are left
-                btnNext.setText(getString(R.string.next));
-                btnSkip.setVisibility(View.VISIBLE);
+                binding.btnNext.setText(getString(R.string.next));
+                binding.btnSkip.setVisibility(View.VISIBLE);
             }
         }
 

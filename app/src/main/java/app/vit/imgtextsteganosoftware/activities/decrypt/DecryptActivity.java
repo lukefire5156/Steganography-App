@@ -10,54 +10,20 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import com.squareup.picasso.Picasso;
-
 import java.io.File;
-
 import app.vit.imgtextsteganosoftware.R;
+import app.vit.imgtextsteganosoftware.databinding.ActivityDecryptBinding;
 import app.vit.imgtextsteganosoftware.utils.Constants;
 import app.vit.imgtextsteganosoftware.utils.StandardMethods;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class DecryptActivity extends AppCompatActivity implements DecryptView {
-
-  @BindView(R.id.ivStegoImage)
-  ImageView ivStegoImage;
-
-  @OnClick(R.id.ivStegoImage)
-  public void onStegoImageClick() {
-    if (ContextCompat.checkSelfPermission(getApplicationContext(),
-      Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-
-      ActivityCompat.requestPermissions(DecryptActivity.this,
-        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-        Constants.PERMISSIONS_EXTERNAL_STORAGE);
-
-    } else {
-      chooseImage();
-    }
-
-  }
-
-  @OnClick(R.id.bDecrypt)
-  public void onButtonClick() {
-    if (isSISelected) {
-      mPresenter.decryptMessage();
-    } else {
-      showToast(R.string.stego_image_not_selected);
-    }
-  }
-
+  private ActivityDecryptBinding binding;
   private ProgressDialog progressDialog;
   private DecryptPresenter mPresenter;
   private boolean isSISelected = false;
@@ -65,31 +31,35 @@ public class DecryptActivity extends AppCompatActivity implements DecryptView {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_decrypt);
+    binding = ActivityDecryptBinding.inflate(getLayoutInflater());
+    setContentView(binding.getRoot());
+    binding.ivStegoImage.setOnClickListener(v -> {
+      if (ContextCompat.checkSelfPermission(getApplicationContext(),
+              Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+        ActivityCompat.requestPermissions(DecryptActivity.this,
+                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                Constants.PERMISSIONS_EXTERNAL_STORAGE);
+
+      } else {
+        chooseImage();
+      }
+    });
+    binding.bDecrypt.setOnClickListener(v -> {
+      if (isSISelected) {
+        mPresenter.decryptMessage();
+      } else {
+        showToast(R.string.stego_image_not_selected);
+      }
+    });
 
     ActionBar actionBar = getSupportActionBar();
     actionBar.setTitle("Decrypt Image");
-
-    ButterKnife.bind(this);
-
     progressDialog = new ProgressDialog(this);
     progressDialog.setMessage("Please wait...");
-
     mPresenter = new DecryptPresenterImpl(this);
-    //initToolbar();
   }
 
-/*  @Override
-  public void initToolbar() {
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-    setSupportActionBar(toolbar);
-
-    ActionBar actionBar = getSupportActionBar();
-    if (actionBar != null) {
-      actionBar.setDisplayHomeAsUpEnabled(true);
-      actionBar.setTitle("Decryption");
-    }
-  }*/
 
   @Override
   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -155,7 +125,7 @@ public class DecryptActivity extends AppCompatActivity implements DecryptView {
 
   @Override
   public Bitmap getStegoImage() {
-    return ((BitmapDrawable) ivStegoImage.getDrawable()).getBitmap();
+    return ((BitmapDrawable) binding.ivStegoImage.getDrawable()).getBitmap();
   }
 
   @Override
@@ -165,7 +135,7 @@ public class DecryptActivity extends AppCompatActivity implements DecryptView {
       .load(file)
       .fit()
       .placeholder(R.drawable.ic_upload)
-      .into(ivStegoImage);
+      .into(binding.ivStegoImage);
     stopProgressDialog();
     isSISelected = true;
   }
